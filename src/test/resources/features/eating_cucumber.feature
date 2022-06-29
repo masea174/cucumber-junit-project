@@ -1,5 +1,6 @@
-Feature:Eating too many cucumbers ,may not be for you
 
+@eating
+Feature:Eating too many cucumbers ,may not be for you
 Background:
   Given John is hungry
 
