@@ -1,9 +1,10 @@
 package com.cydeo.utilities;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
+
 
 public class WebTablesUtil {
     public static String returnOrderDate(WebDriver driver, String costumerName){
@@ -19,7 +20,7 @@ public class WebTablesUtil {
 
         WebElement customerDateCell = driver.findElement(By.xpath(locator));
 
-        Assert.assertEquals(customerDateCell.getText(),expectedOrderDate);
+        Assert.assertEquals(expectedOrderDate,customerDateCell.getText());
 
 
 

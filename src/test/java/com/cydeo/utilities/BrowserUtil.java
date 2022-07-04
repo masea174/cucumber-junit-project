@@ -1,6 +1,7 @@
 package com.cydeo.utilities;
 
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -70,5 +71,30 @@ public class BrowserUtil {
     public static List<String> getElementsTextWithStream(List<WebElement> elements) {
 
         return elements.stream().map(x->x.getText()).collect(Collectors.toList());
+
+    }
+    public static void waitForAlertIsPresent(int timeout) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
+        wait.until(ExpectedConditions.alertIsPresent());
+    }
+
+
+    /**
+     * Clicks on an element using JavaScript
+     *
+     * @param element
+     */
+    public static void clickWithJS(WebElement element) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
+    }
+
+    /**
+     * Scrolls down to an element using JavaScript
+     *
+     * @param element
+     */
+    public static void scrollToElement(WebElement element) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 }
