@@ -45,4 +45,12 @@ public class Login_StepDefinition {
     public void userEntersAdminPassword() {
 
     }
+
+    @Given("user is on library login page")
+    public void userIsOnLibraryLoginPage() {
+    }
+
+    @Then("user should be able to see DashbordPage")
+    public void userShouldBeAbleToSeeDashbordPage() {
+    }
 }
